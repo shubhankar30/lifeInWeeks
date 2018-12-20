@@ -3306,3 +3306,10 @@ input, select, textarea {
 			}
 
 		}
+
+
+		.center-items{
+				display:flex;
+				justify-content: center;
+				align-content: center;
+		}
