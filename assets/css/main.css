@@ -3332,3 +3332,17 @@ input, select, textarea {
 			outline:1px solid black;
 			display:inline-block;
 		}
+		.grid2 {
+			margin:0px;
+			padding:0;
+			
+			display:inline-block;
+		}
+
+		.green-box{
+			background-color: green;
+		}
+
+		.test{
+			background-color: yellow;
+		}
