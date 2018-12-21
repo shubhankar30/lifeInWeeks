@@ -3346,3 +3346,21 @@ input, select, textarea {
 		.test{
 			background-color: yellow;
 		}
+
+		@media screen and (max-width: 736px) {
+			.custom-no-padding{
+				padding-left:5px!important;
+				padding-right:5px!important;
+			}
+		.font-size-adjust{
+			font-size:x-small;
+			position: relative;
+			right:3px;
+		}
+	}
+
+	@media screen and (min-width: 737px) {
+		.font-size-adjust{
+			font-size:small;
+		}
+	}

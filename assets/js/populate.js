@@ -1,22 +1,24 @@
+function returnDoubleDigits(no){
+  if(no <= 9){
+    return "0" + no;
+  } else {
+    return no;
+  }
+}
+
 // function that builds a grid in the "container"
 function createGrid(x, y) {
   var containerHeight = $('#container').innerHeight();
   var containerWidth = $('#container').innerWidth();
-  var counter = 0;
+  var weekCounter = 0;
 
   for (var rows = 0; rows < y; rows++) {
-    // $("#container").append("<div class='year_" + rows + "'></div>");
-    // $( "1" ).insertBefore($(".year_"+rows) ;
-    // $( "1" ).before( $( ".year_"+rows ) );
-    // $(".year_" + rows).append("1");
-
     for (var columns = 0; columns < x; columns++) {
       if(columns === 0){
-        console.log("ASDASDs")
-        $("#container").append("<div class='grid2' style='font-size:small'>"+ rows +"</div>");
+        $("#container").append("<div class='grid2 font-size-adjust'>"+ returnDoubleDigits(rows) +"</div>");
       } else {
-        counter++;
-          $("#container").append("<div class='grid week_" + counter + "'></div>");
+          weekCounter++;
+          $("#container").append("<div class='grid week_" + weekCounter + "'></div>");
       };
     }
   };
@@ -29,9 +31,11 @@ function createGrid(x, y) {
 
 var todaysDate;
 var selectedDate;
+var expectedAge = 80;
+var numberOfWeeksInYear = 52;
 
 $(document).ready(function () {
-  createGrid(53, 80);
+  createGrid(numberOfWeeksInYear + 1, expectedAge);
   todaysDate = moment();
     //your code here
     console.log("javascript file running");
