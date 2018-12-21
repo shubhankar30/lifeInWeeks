@@ -99,7 +99,7 @@ input, select, textarea {
 	}
 
 	body {
-		background: #ffffff;
+		background: #f6f6f6;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -1833,6 +1833,7 @@ input, select, textarea {
 			text-align: center;
 			line-height: 2.65em;
 			color: inherit;
+			background-color: #E5E8E8
 		}
 
 			.icon.style2:before {
@@ -2829,13 +2830,13 @@ input, select, textarea {
 			}
 
 			#header .logo .symbol {
-				margin-right: 0.65em;
+				margin-right: 0.0em;
 			}
 
 				#header .logo .symbol img {
 					display: block;
-					width: 2em;
-					height: 2em;
+					width: 5em;
+					height: 5em;
 				}
 
 		#header nav {
