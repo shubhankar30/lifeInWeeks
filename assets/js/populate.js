@@ -28,16 +28,14 @@ function createGrid(x, y) {
   $(".grid2").width(containerWidth/x);
   $(".grid2").height(window.innerHeight/y);
 
-
-  console.log("heights");
-  console.log($('#container').height());
-  $('#footer').css('margin-top',$('#container').height());
+  $('#footer').css('margin-top',$('#container').height() + 100 );
 };
 
 var todaysDate;
 var selectedDate;
 var expectedAge = 80;
 var numberOfWeeksInYear = 52;
+var startDate="30/12/1990";
 
 $(document).ready(function () {
   createGrid(numberOfWeeksInYear + 1, expectedAge);
@@ -47,8 +45,11 @@ $(document).ready(function () {
     console.log("javascript file running");
     $('#datepicker').datepicker({
      format:'dd/mm/yyyy',
-     startView:'1994',
      autoclose: 'true',
+     defaultViewDate: {
+       month: 0,
+       year: 1990
+     }
     });
 
     $('#datepicker').datepicker().on('changeDate', function (ev) {
