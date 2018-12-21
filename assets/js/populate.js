@@ -1,19 +1,29 @@
 // function that builds a grid in the "container"
-function createGrid(x) {
+function createGrid(x, y) {
+  var containerHeight = $('#container').innerHeight();
+  var containerWidth = $('#container').innerWidth();
+  console.log(containerHeight);
+  console.log(containerWidth);
+  console.log(window.innerHeight);
+  console.log(window.innerWidth);
+
+  var counter = 0;
+
   for (var rows = 0; rows < x; rows++) {
-      for (var columns = 0; columns < x; columns++) {
-          $("#container").append("<div class='grid'></div>");
+      for (var columns = 0; columns < y; columns++) {
+        counter++;
+          $("#container").append("<div class='grid week_" + counter + " year_'" + rows + "'></div>");
       };
   };
-  $(".grid").width(380/x);
-  $(".grid").height(380/x);
+  $(".grid").width(containerWidth/x);
+  $(".grid").height(window.innerHeight/y);
 };
 
 
 
 
 $(document).ready(function () {
-  createGrid(52);
+  createGrid(52, 100);
 
     //your code here
     console.log("ASDASDASD")
