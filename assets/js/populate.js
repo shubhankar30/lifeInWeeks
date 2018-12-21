@@ -27,6 +27,11 @@ function createGrid(x, y) {
 
   $(".grid2").width(containerWidth/x);
   $(".grid2").height(window.innerHeight/y);
+
+
+  console.log("heights");
+  console.log($('#container').height());
+  $('#footer').css('margin-top',$('#container').height());
 };
 
 var todaysDate;
@@ -37,6 +42,7 @@ var numberOfWeeksInYear = 52;
 $(document).ready(function () {
   createGrid(numberOfWeeksInYear + 1, expectedAge);
   todaysDate = moment();
+
     //your code here
     console.log("javascript file running");
     $('#datepicker').datepicker({
