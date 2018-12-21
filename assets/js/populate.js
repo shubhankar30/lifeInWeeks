@@ -6,6 +6,7 @@ function returnDoubleDigits(no){
   }
 }
 
+
 // function that builds a grid in the "container"
 function createGrid(x, y) {
   var containerHeight = $('#container').innerHeight();
@@ -65,10 +66,11 @@ $(document).ready(function () {
 
       $(".week_" + diff).addClass("blink");
 
-      if(expectedAge !== 80){
-        $("#container").empty();
-        createGrid(numberOfWeeksInYear + 1, expectedAge);
-      }
+      // if(expectedAge !== 80){
+      //   $("#container").empty();
+      //   createGrid(numberOfWeeksInYear + 1, expectedAge);
+      // }
+
     });
 
   });
