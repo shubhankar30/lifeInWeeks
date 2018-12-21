@@ -9,8 +9,8 @@ function createGrid(x, y) {
 
   var counter = 0;
 
-  for (var rows = 0; rows < x; rows++) {
-      for (var columns = 0; columns < y; columns++) {
+  for (var rows = 0; rows < y; rows++) {
+      for (var columns = 0; columns < x; columns++) {
         counter++;
           $("#container").append("<div class='grid week_" + counter + " year_'" + rows + "'></div>");
       };
