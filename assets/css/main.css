@@ -3341,6 +3341,7 @@ input, select, textarea {
 
 		.green-box{
 			background-color: green;
+			opacity: 0.70;
 		}
 
 		.test{
@@ -3364,3 +3365,18 @@ input, select, textarea {
 			font-size:small;
 		}
 	}
+
+
+	.blink{
+		animation:blink 700ms infinite alternate;
+	}
+	
+	@keyframes blink {
+		from {
+			background-color: green;
+			 opacity:1; 
+		}
+		to {
+			opacity:0; 
+		}
+	};

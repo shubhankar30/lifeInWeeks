@@ -33,12 +33,11 @@ function createGrid(x, y) {
 
 var todaysDate;
 var selectedDate;
-var expectedAge = 80;
 var numberOfWeeksInYear = 52;
 var startDate="30/12/1990";
 
 $(document).ready(function () {
-  createGrid(numberOfWeeksInYear + 1, expectedAge);
+  createGrid(numberOfWeeksInYear + 1, 80);
   todaysDate = moment();
 
     //your code here
@@ -52,20 +51,23 @@ $(document).ready(function () {
      }
     });
 
-    $('#datepicker').datepicker().on('changeDate', function (ev) {
-      console.log("date changed");
-      console.log($('#datepicker').val());
-      // console.log($('#datepicker').date('date'));
-      
+    $('#submit-button').on('click',function(e){
+      expectedAge = 80;
+      expectedAge = $('#expected-age').val();
+      console.log(expectedAge);
       selectedDate = moment($('#datepicker').val(), "DD/MM/YYYY");
-      console.log("selectedDate" + selectedDate);
-      console.log("todaysDate" + todaysDate);
       var diff = todaysDate.diff(selectedDate, 'week');
-      console.log(diff);
 
 
       for(var weekNo = 0;weekNo<diff;weekNo++){
         $(".week_" + weekNo).addClass("green-box");
+      }
+
+      $(".week_" + diff).addClass("blink");
+
+      if(expectedAge !== 80){
+        $("#container").empty();
+        createGrid(numberOfWeeksInYear + 1, expectedAge);
       }
     });
 
