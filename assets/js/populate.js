@@ -5,21 +5,27 @@ function createGrid(x) {
           $("#container").append("<div class='grid'></div>");
       };
   };
-  $(".grid").width(960/x);
-  $(".grid").height(960/x);
+  $(".grid").width(380/x);
+  $(".grid").height(380/x);
 };
 
 
+
+
 $(document).ready(function () {
-  createGrid(16);
+  createGrid(52);
 
     //your code here
     console.log("ASDASDASD")
     $('#datepicker').datepicker({
      format:'dd/mm/yyyy',
-     startView:'1994'
+     startView:'1994',
+     autoclose: 'true',
     });
 
-
+    $('#datepicker').datepicker().on('changeDate', function (ev) {
+      console.log("date changed");
+      console.log(ev.date);
+    });
 
   });
