@@ -75,4 +75,13 @@ $(document).ready(function () {
     
     });
 
+      $('#ideal-age').click(function(){
+        console.log("ASDASDs");
+        if($(this).prop("checked") == true){
+          console.log("check");
+        } else {
+            console.log("uncheck");
+        }
+      })
+
   });

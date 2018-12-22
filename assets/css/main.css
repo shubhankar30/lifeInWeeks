@@ -67,7 +67,6 @@ input::-moz-focus-inner {
 
 input, select, textarea {
 	-moz-appearance: none;
-	-webkit-appearance: none;
 	-ms-appearance: none;
 	appearance: none;
 }
@@ -2125,7 +2124,6 @@ input, select, textarea {
 	select,
 	textarea {
 		-moz-appearance: none;
-		-webkit-appearance: none;
 		-ms-appearance: none;
 		appearance: none;
 		background-color: transparent;
@@ -2196,7 +2194,6 @@ input, select, textarea {
 	input[type="checkbox"],
 	input[type="radio"] {
 		-moz-appearance: none;
-		-webkit-appearance: none;
 		-ms-appearance: none;
 		appearance: none;
 		display: block;
@@ -2425,8 +2422,7 @@ input, select, textarea {
 	button,
 	.button {
 		-moz-appearance: none;
-		-webkit-appearance: none;
-		-ms-appearance: none;
+			-ms-appearance: none;
 		appearance: none;
 		-moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 		-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
@@ -3345,10 +3341,30 @@ input, select, textarea {
 			opacity: 0.70;
 		}
 
-		.test{
-			background-color: yellow;
+		.early-age{
+			background-color: #99ccff;
 		}
 
+		.school-age{
+			background-color: #9b99ff;
+		}
+
+		.college{
+			background-color: #ff6666;
+		}
+
+		.graduate{
+			background-color: #ff8533;
+		}
+
+		.career-age{
+			background-color: #ffff66;
+		}
+
+		.retirement{
+			background-color: #cc80ff;
+		}
+		
 		@media screen and (max-width: 736px) {
 			.custom-no-padding{
 				padding-left:5px!important;
