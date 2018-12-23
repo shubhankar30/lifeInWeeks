@@ -76,11 +76,38 @@ $(document).ready(function () {
     });
 
       $('#ideal-age').click(function(){
-        console.log("ASDASDs");
+        // selectedDate = moment($('#datepicker').val(), "DD/MM/YYYY");
+      var diff = todaysDate.diff(selectedDate, 'week');
+
         if($(this).prop("checked") == true){
           console.log("check");
+          for(var weekNo = 0;weekNo<=312;weekNo++){
+            $(".week_" + weekNo).addClass("early-age");
+          }
+          for(var weekNo = 313;weekNo<=834;weekNo++){
+            $(".week_" + weekNo).addClass("school-age");
+          }
+          for(var weekNo = 835;weekNo<=1147;weekNo++){
+            $(".week_" + weekNo).addClass("college-age");
+          }
+          for(var weekNo = 1148;weekNo<=3493;weekNo++){
+            $(".week_" + weekNo).addClass("career-age");
+          }
+
+          var tempLastBlock = 52 * 80;
+          if($('#expected-age').val()!=""){
+            var tempLastBlock = $('#expected-age').val() * 52;
+          }
+          for(var weekNo = 3494;weekNo<=tempLastBlock;weekNo++){
+            $(".week_" + weekNo).addClass("retirement-age");
+          }
+
+
+
         } else {
             console.log("uncheck");
+            $("#container").empty();
+        createGrid(numberOfWeeksInYear + 1, expectedAge);
         }
       })
 

@@ -3346,14 +3346,10 @@ input, select, textarea {
 		}
 
 		.school-age{
-			background-color: #9b99ff;
-		}
-
-		.college{
 			background-color: #ff6666;
 		}
 
-		.graduate{
+		.college-age{
 			background-color: #ff8533;
 		}
 
@@ -3361,7 +3357,7 @@ input, select, textarea {
 			background-color: #ffff66;
 		}
 
-		.retirement{
+		.retirement-age{
 			background-color: #cc80ff;
 		}
 		
