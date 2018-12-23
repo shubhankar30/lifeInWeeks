@@ -39,37 +39,81 @@ var startDate="30/12/1990";
 var expectedAge = 80;
 
 $(document).ready(function () {
-  createGrid(numberOfWeeksInYear + 1, 80);
-  todaysDate = moment();
-  $('#expected-age').val(80);
-    //your code here
-    console.log("javascript file running");
-    $('#datepicker').datepicker({
-     format:'dd/mm/yyyy',
-     autoclose: 'true',
-     defaultViewDate: {
-       month: 0,
-       year: 1990
-     }
-    });
+  
+//Initialize
+createGrid(numberOfWeeksInYear + 1, 80);
+todaysDate = moment();
+$('#expected-age').val(80);
+$('#datepicker').val("30/12/1990");
+
+//Datepicker init
+  $('#datepicker').datepicker({
+    format:'dd/mm/yyyy',
+    autoclose: 'true',
+    defaultViewDate: {
+      month: 0,
+      year: 1990
+    }
+  });
 
     $('#submit-button').on('click',function(e){
       console.log(expectedAge);
       selectedDate = moment($('#datepicker').val(), "DD/MM/YYYY");
+
       var diff = todaysDate.diff(selectedDate, 'week');
 
+      if($('#ideal-age').prop("checked") == true){
+        console.log("check");
+        for(var weekNo = 0;weekNo<=312;weekNo++){
+          $(".week_" + weekNo).addClass("early-age");
+        }
+        for(var weekNo = 313;weekNo<=834;weekNo++){
+          $(".week_" + weekNo).addClass("school-age");
+        }
+        for(var weekNo = 835;weekNo<=1147;weekNo++){
+          $(".week_" + weekNo).addClass("college-age");
+        }
+        for(var weekNo = 1148;weekNo<=3493;weekNo++){
+          $(".week_" + weekNo).addClass("career-age");
+        }
 
-      if($('#expected-age').val()!=""){
-        expectedAge = $('#expected-age').val();
-        $("#container").empty();
-        createGrid(numberOfWeeksInYear + 1, expectedAge);
-      }
+        var tempLastBlock = 52 * 80;
+        if($('#expected-age').val()!=""){
+          var tempLastBlock = $('#expected-age').val() * 52;
+        }
+        for(var weekNo = 3494;weekNo<=tempLastBlock;weekNo++){
+          $(".week_" + weekNo).addClass("retirement-age");
+        }
+        $(".week_" + diff).addClass("blink");
+
+      } else {
+          console.log("uncheck");
+          $("#container").empty();
+      createGrid(numberOfWeeksInYear + 1, expectedAge);
+
 
       for(var weekNo = 0;weekNo<diff;weekNo++){
         $(".week_" + weekNo).addClass("green-box");
       }
 
       $(".week_" + diff).addClass("blink");
+      }
+
+
+
+
+
+
+      
+
+
+      // if($('#expected-age').val()!=""){
+      //   expectedAge = $('#expected-age').val();
+      //   $("#container").empty();
+      //   createGrid(numberOfWeeksInYear + 1, expectedAge);
+      // }
+
+     
 
       console.log(expectedAge);
     
@@ -77,38 +121,7 @@ $(document).ready(function () {
 
       $('#ideal-age').click(function(){
         // selectedDate = moment($('#datepicker').val(), "DD/MM/YYYY");
-      var diff = todaysDate.diff(selectedDate, 'week');
-
-        if($(this).prop("checked") == true){
-          console.log("check");
-          for(var weekNo = 0;weekNo<=312;weekNo++){
-            $(".week_" + weekNo).addClass("early-age");
-          }
-          for(var weekNo = 313;weekNo<=834;weekNo++){
-            $(".week_" + weekNo).addClass("school-age");
-          }
-          for(var weekNo = 835;weekNo<=1147;weekNo++){
-            $(".week_" + weekNo).addClass("college-age");
-          }
-          for(var weekNo = 1148;weekNo<=3493;weekNo++){
-            $(".week_" + weekNo).addClass("career-age");
-          }
-
-          var tempLastBlock = 52 * 80;
-          if($('#expected-age').val()!=""){
-            var tempLastBlock = $('#expected-age').val() * 52;
-          }
-          for(var weekNo = 3494;weekNo<=tempLastBlock;weekNo++){
-            $(".week_" + weekNo).addClass("retirement-age");
-          }
-
-
-
-        } else {
-            console.log("uncheck");
-            $("#container").empty();
-        createGrid(numberOfWeeksInYear + 1, expectedAge);
-        }
+    
       })
 
   });
