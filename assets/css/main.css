@@ -3360,6 +3360,12 @@ input, select, textarea {
 		.retirement-age{
 			background-color: #cc80ff;
 		}
+
+		.square-icon{
+			width: 15px;
+			height:15px;
+			outline: 1px solid black;
+		}
 		
 		@media screen and (max-width: 736px) {
 			.custom-no-padding{
