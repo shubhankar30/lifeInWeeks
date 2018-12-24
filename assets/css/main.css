@@ -3372,6 +3372,12 @@ input, select, textarea {
 		}
 		
 		@media screen and (max-width: 736px) {
+			.display-for-mobile{
+				display:block;
+			}
+			.display-for-pc{
+				display:none;
+			}
 			.custom-mobile-padding{
 				padding-top:20px;
 			}
@@ -3388,6 +3394,12 @@ input, select, textarea {
 	}
 
 	@media screen and (min-width: 737px) {
+		.display-for-pc{
+			display:block;
+		}
+		.display-for-mobile{
+			display:none;
+		}
 		.font-size-adjust{
 			font-size:small;
 		}

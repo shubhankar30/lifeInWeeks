@@ -1,7 +1,6 @@
 <!DOCTYPE HTML>
 <head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 	<title>Life In Weeks</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -77,9 +76,14 @@
 						<div class="inner">
 							<div class="col-md-6 col-xs-12">
 									<h2 class="col-xs-12 center-items" style="margin-bottom:0px">Birth Date
-											<input id="datepicker" style="padding-left: 15px;width:120px" placeholder="DD/MM/YYYY">
-											<button id="submit-button" class="button primary" style="margin-left:20px">Submit</button>
+											<input id="datepicker" style="padding-left: 15px;width:120px; margin-left:15px;" placeholder="DD/MM/YYYY">
+											<button id="submit-button" class="button primary display-for-pc" style="margin-left:20px">Submit</button>
 									</h2>
+							</div>
+							<div class="col-xs-12 display-for-mobile">
+								<div class="center-items custom-mobile-padding">
+								<button id="submit-button" class="button primary" style="margin-left:20px">Submit</button>
+							</div>
 							</div>
 							<div class="col-md-6 col-xs-12 custom-mobile-padding">
 								<h2 class="col-xs-12 center-items"> Ideal age
@@ -149,7 +153,6 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/populate.js"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 			<script src="https://unpkg.com/moment"></script>
 
 
