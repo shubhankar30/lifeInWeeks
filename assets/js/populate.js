@@ -13,16 +13,21 @@ function createGrid(x, y) {
   var containerWidth = $('#container').innerWidth();
   var weekCounter = 0;
 
+  var $test = $("<div />");
   for (var rows = 0; rows < y; rows++) {
     for (var columns = 0; columns < x; columns++) {
       if(columns === 0){
-        $("#container").append("<div class='grid2 font-size-adjust'>"+ returnDoubleDigits(rows) +"</div>");
+        $test.append("<div class='grid2 font-size-adjust'>"+ returnDoubleDigits(rows) +"</div>");
       } else {
           weekCounter++;
-          $("#container").append("<div class='grid week_" + weekCounter + "'></div>");
+          $test.append("<div class='grid week_" + weekCounter + "'></div>");
       };
     }
   };
+  $("#container").append($test);
+
+
+
   $(".grid").width(containerWidth/x);
   $(".grid").height(window.innerHeight/y);
 
@@ -86,7 +91,7 @@ $(document).ready(function () {
   $("#ideal-age").change(function() {
 
     //Find last block id according to expected age
-    var lastBlockId = $('#expected-age').val() * 52;
+    var lastBlockId = 80 * 52;
 
     //get the current age week
     var diff = todaysDate.diff(selectedDate, 'week');
@@ -96,24 +101,26 @@ $(document).ready(function () {
       $('#chart-ages').show();
 
       //Colour all blocks
-      for(var weekNo = 0;weekNo<=312;weekNo++){
-        $(".week_" + weekNo).addClass("early-age");
+      for(var weekNo = 1;weekNo<=lastBlockId;weekNo++){
+        var test = document.getElementsByClassName("week_" + weekNo);
+
+        if(weekNo<=312){
+
+          test[0].classList.add('early-age');
+      } else if(weekNo >= 312 && weekNo <= 834){
+        test[0].classList.add('school-age');
+      } else if(weekNo >= 835 && weekNo <= 1148) {
+        test[0].classList.add('college-age');
+      } else if(weekNo >= 1149 && weekNo <= 3493){
+        test[0].classList.add('career-age');
+      }else if(weekNo >= 3494 && weekNo <= lastBlockId){
+        test[0].classList.add('retirement-age');
       }
-      for(var weekNo = 313;weekNo<=834;weekNo++){
-        $(".week_" + weekNo).addClass("school-age");
+      if(weekNo<=diff){
+        test[0].classList.add('green-box');
       }
-      for(var weekNo = 835;weekNo<=1147;weekNo++){
-        $(".week_" + weekNo).addClass("college-age");
-      }
-      for(var weekNo = 1148;weekNo<=3493;weekNo++){
-        $(".week_" + weekNo).addClass("career-age");
-      }
-      for(var weekNo = 0;weekNo<diff;weekNo++){
-        $(".week_" + weekNo).addClass("green-box");
-      }
-      for(var weekNo = 3494;weekNo<=lastBlockId;weekNo++){
-        $(".week_" + weekNo).addClass("retirement-age");
-      }
+    }
+   
 
     } else {
       //Hide colour chart
