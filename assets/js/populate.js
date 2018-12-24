@@ -6,6 +6,32 @@ function returnDoubleDigits(no){
   }
 }
 
+function populateFunction(){
+
+    if(setBlink){
+      $(".week_" + diff).removeClass("blink");
+      for(var weekNo = 0;weekNo<diff;weekNo++){
+        $(".week_" + weekNo).removeClass("green-box");
+      }
+      selectedDate = moment($('#datepicker').val(),"DD/MM/YYYY");
+      diff = todaysDate.diff((selectedDate), 'week');
+      for(var weekNo = 0;weekNo<diff;weekNo++){
+        $(".week_" + weekNo).addClass("green-box");
+      }
+      $(".week_" + diff).addClass("blink");
+
+    } else {
+
+    selectedDate = moment($('#datepicker').val(),"DD/MM/YYYY");
+    diff = todaysDate.diff(selectedDate, 'week');
+    for(var weekNo = 0;weekNo<diff;weekNo++){
+      $(".week_" + weekNo).addClass("green-box");
+    }
+
+    $(".week_" + diff).addClass("blink");
+    setBlink = true;
+  }
+}
 
 // function that builds a grid in the "container"
 function createGrid(x, y) {
@@ -78,42 +104,8 @@ $(document).ready(function () {
   $('#expected-age').val(80);
   createGrid(numberOfWeeksInYear + 1, 80);
 
-  // //Datepicker init
-  // $('#datepicker').datepicker({
-  //   format:'dd/mm/yyyy',
-  //   autoclose: 'true',
-  //   defaultViewDate: {
-  //     month: 0,
-  //     year: 1990
-  //   }
-  // });
-
-
-  $('#submit-button').on('click', function (ev) {
-    if(setBlink){
-      $(".week_" + diff).removeClass("blink");
-      for(var weekNo = 0;weekNo<diff;weekNo++){
-        $(".week_" + weekNo).removeClass("green-box");
-      }
-      selectedDate = moment($('#datepicker').val(),"DD/MM/YYYY");
-      diff = todaysDate.diff((selectedDate), 'week');
-      for(var weekNo = 0;weekNo<diff;weekNo++){
-        $(".week_" + weekNo).addClass("green-box");
-      }
-      $(".week_" + diff).addClass("blink");
-
-    } else {
-
-    selectedDate = moment($('#datepicker').val(),"DD/MM/YYYY");
-    diff = todaysDate.diff(selectedDate, 'week');
-    for(var weekNo = 0;weekNo<diff;weekNo++){
-      $(".week_" + weekNo).addClass("green-box");
-    }
-
-    console.log(diff)
-    $(".week_" + diff).addClass("blink");
-    setBlink = true;
-  }
+  $('#submit-button').on('click', function () {
+    populateFunction();
   });
 
 
