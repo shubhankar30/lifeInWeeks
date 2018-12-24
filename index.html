@@ -43,7 +43,10 @@
 							<!-- Logo -->
 							<div class="center-items">
 								<a href="index.html" class="logo">
-									<h1><span class="title">Life In Weeks</span>
+
+									<h1 class="col-xs-12">
+											<div class="symbol center-items "><img src="images/logo2.svg" alt="" /></div>
+											<span class="title">Life In Weeks</span>
 										</h1>
 								</a>
 							</div>
@@ -73,44 +76,42 @@
 					<div id="main">
 						<div class="inner">
 							<div class="col-md-6 col-xs-12">
-									<h3 class="col-xs-12 center-items" style="margin-bottom:0px">Birth Date
-											<input id="datepicker" style="padding-left: 15px;width:100px">
-
-									</h3>
+									<h2 class="col-xs-12 center-items" style="margin-bottom:0px">Birth Date
+											<input id="datepicker" style="padding-left: 15px;width:120px" placeholder="DD/MM/YYYY">
+											<button id="submit-button" class="button primary" style="margin-left:20px">Submit</button>
+									</h2>
 							</div>
-							<!-- <div class="col-md-4 col-xs-12">
-									<h3 class="col-xs-12 center-items" style="margin-bottom:0px">Expected Age
-											<input id="expected-age" style="padding-left: 15px;width:100px" placeholder="80">
-
-									</h3>
-									
-							</div> -->
-							<div class="col-md-6 col-xs-12">
-								<h3 class="col-xs-12 center-items"> Ideal age
-									<input type="checkbox" name="ideal-age" id="ideal-age" style="opacity:1;z-index:1"> 
-								</h3>
+							<div class="col-md-6 col-xs-12 custom-mobile-padding">
+								<h2 class="col-xs-12 center-items"> Ideal age
+									<input type="checkbox" name="ideal-age" id="ideal-age" > 
+								</h2>
 							</div>
 							<div class="center-items col-xs-12">
 								
 								
 						</div>
-							<div class="symbol center-items col-xs-12"><img src="images/logo2.svg" alt="" /></div>
 
 
 							<br>
 							<br>
-							<div id="chart-ages" style="display:none">
-								<div class="square-icon early-age"></div>Early Years<br>
-								<div class="square-icon  school-age"></div>School<br>
-								<div class="square-icon  college-age"></div>College<br>
-								<div class="square-icon  career-age"></div>Career<br>
-								<div class="square-icon  retirement-age"></div>Retirement<br>
+							<div id="chart-ages" class="col-xs-12" style="display:none">
+								
+								<div class="col-xs-4 col-md-2"><div class="square-icon current-age"></div>Current</div>
+								<div class="col-xs-4 col-md-2"><div class="square-icon early-age"></div>Early Years</div>
+								<div class="col-xs-4 col-md-2"><div class="square-icon school-age"></div>School</div>
+								<div class="col-xs-4 col-md-2"><div class="square-icon college-age"></div>College</div>
+								<div class="col-xs-4 col-md-2"><div class="square-icon career-age"></div>Career</div>
+								<div class="col-xs-4 col-md-2"><div class="square-icon retirement-age"></div>Retirement</div>
 							  </div>
 
 
 							<div class="col-xs-12 custom-no-padding" >
-									<div id="container"></div>
+									<div id="container">
+										<div id="blank-grid"></div>
+										<div id="color-grid" style="display:none"></div>
+									</div>
 							</div>
+							
 						</div>
 
 
@@ -134,11 +135,10 @@
 								</ul>
 							</div>
 							<ul class="copyright center-items">
-								<li style="color:black!important">&copy; Shubhankar Ranade</li>
+								<li style="color:black!important;font-size:16px">&copy; Shubhankar Ranade</li>
 							</ul>
 						</div>
 					</footer>
-
 			</div>
 
 		<!-- Scripts -->

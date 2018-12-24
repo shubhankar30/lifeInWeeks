@@ -2199,9 +2199,10 @@ input, select, textarea {
 		display: block;
 		float: left;
 		margin-right: -2em;
-		opacity: 0;
-		width: 1em;
-		z-index: -1;
+		opacity: 1;
+		width: 1.5em;
+		height:1.5em;
+		z-index: 1;
 	}
 
 		input[type="checkbox"] + label,
@@ -3360,6 +3361,9 @@ input, select, textarea {
 		.retirement-age{
 			background-color: #cc80ff;
 		}
+		.current-age{
+			background-color: green;
+		}
 
 		.square-icon{
 			width: 15px;
@@ -3368,6 +3372,10 @@ input, select, textarea {
 		}
 		
 		@media screen and (max-width: 736px) {
+			.custom-mobile-padding{
+				padding-top:20px;
+			}
+
 			.custom-no-padding{
 				padding-left:5px!important;
 				padding-right:5px!important;
@@ -3399,3 +3407,5 @@ input, select, textarea {
 			opacity:0; 
 		}
 	};
+
+	
