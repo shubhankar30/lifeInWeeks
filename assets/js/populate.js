@@ -99,6 +99,11 @@ var $test2;
 var $test;
 
 $(document).ready(function () {
+
+  var logoNum = Math.floor(Math.random() * 6) + 1;
+  var temp = Math.random();
+  $('#logo-id').attr('src', 'images/logo' + logoNum + '.svg');
+
   //Initialize
   todaysDate = moment();
   $('#expected-age').val(80);
