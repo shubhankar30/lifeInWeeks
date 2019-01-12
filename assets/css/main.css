@@ -3337,6 +3337,11 @@ input, select, textarea {
 			display:inline-block;
 		}
 
+		.blue-box{
+			background-color: black;
+			opacity: 0.70;
+		}
+
 		.green-box{
 			background-color: green;
 			opacity: 0.70;
@@ -3412,12 +3417,15 @@ input, select, textarea {
 	
 	@keyframes blink {
 		from {
-			background-color: green;
 			 opacity:1; 
 		}
 		to {
 			opacity:0; 
 		}
 	};
+
+	
+
+
 
 	

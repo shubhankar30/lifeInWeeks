@@ -28,6 +28,8 @@ function populateFunction(){
       $(".week_" + weekNo).addClass("green-box");
     }
 
+    $(".week_" + diff).addClass("green-box");
+
     $(".week_" + diff).addClass("blink");
     setBlink = true;
   }
