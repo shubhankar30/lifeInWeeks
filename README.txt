@@ -1,4 +1,6 @@
-Visit at (https://shubhankar30.github.io/lifeInWeeks/)
+## Life In Weeks
+
+[https://shubhankar30.github.io/lifeInWeeks/](https://shubhankar30.github.io/lifeInWeeks/)
 
 Made with basic html, css, javascript.
 
