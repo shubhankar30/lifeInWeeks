@@ -1,3 +1,7 @@
 Visit at (https://shubhankar30.github.io/lifeInWeeks/)
 
-Simple website to visualise life in blocks made of weeks. Just enter birthdate. 
+Made with basic html, css, javascript.
+
+Simple website to visualise life in blocks made of weeks. Just enter birthdate.
+
+Feel free to add any improvements or suggestions.
