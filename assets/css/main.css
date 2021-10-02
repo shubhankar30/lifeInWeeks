@@ -73,6 +73,21 @@ input, select, textarea {
 
 /* Basic */
 
+input[type=checkbox] {
+	cursor: pointer;
+}
+
+input[type=checkbox]:after {
+content: " ";
+background-color: #D7B1D7;
+display: inline-block;
+visibility: visible;
+}
+
+input[type=checkbox]:checked:after {
+content: "\2714";
+}
+
 	@-ms-viewport {
 		width: device-width;
 	}
